@@ -8,7 +8,7 @@ echo "Creating directories if they do not exist..."
 mkdir -p .config/hypr .config/wallpapers .config/waybar .config/wofi .config/systemd/user
 
 echo "Wiping old backed-up configs"
-rm -rf .config/hypr/* .config/wallpapers/* .config/waybar/* .config/wofi/* vcable.sh .config/systemd/user/vcable.service
+rm -rf .config/hypr/* .config/wallpapers/* .config/waybar/* .config/wofi/* vcable.sh .config/systemd/user/vcable.service bashrc
 
 echo "Copying Hypr configs..."
 cp -rf ~/.config/hypr/. .config/hypr/
@@ -27,5 +27,8 @@ cp -f ~/vcable.sh vcable.sh
 
 echo "Copying vcable service..."
 cp -f ~/.config/systemd/user/vcable.service .config/systemd/user/vcable.service
+
+echo "Copying bashrc file..."
+cp -f ~/.bashrc .bashrc
 
 echo "Backup completed."
