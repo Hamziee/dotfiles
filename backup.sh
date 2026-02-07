@@ -5,19 +5,22 @@ cd "$(dirname "$0")"
 ### dotfiles backup script ###
 
 echo "Creating directories if they do not exist..."
-mkdir -p .config/hypr .config/waybar .config/wofi .config/systemd/user
+mkdir -p .config/hypr .config/wallpapers .config/waybar .config/wofi .config/systemd/user
+
+echo "Wiping old backed-up configs"
+rm -rf .config/hypr/* .config/wallpapers/* .config/waybar/* .config/wofi/* vcable.sh .config/systemd/user/vcable.service
 
 echo "Copying Hypr configs..."
-cp -rf ~/.config/hypr/ .config/hypr/
+cp -rf ~/.config/hypr/. .config/hypr/
 
 echo "Copying wallpapers..."
-cp -rf ~/.config/wallpapers/ .config/wallpapers
+cp -rf ~/.config/wallpapers/. .config/wallpapers/
 
 echo "Copying Waybar configs..."
-cp -rf ~/.config/waybar/ .config/waybar/
+cp -rf ~/.config/waybar/. .config/waybar/
 
 echo "Copying Wofi configs..."
-cp -rf ~/.config/wofi/ .config/wofi/
+cp -rf ~/.config/wofi/. .config/wofi/
 
 echo "Copying vcable script..."
 cp -f ~/vcable.sh vcable.sh
