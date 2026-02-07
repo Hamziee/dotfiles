@@ -1,0 +1,13 @@
+[Unit]
+Description=Setup Virtual Cables
+After=pipewire.service pipewire-pulse.service
+Wants=pipewire.service pipewire-pulse.service
+#After=20
+
+[Service]
+Type=oneshot
+ExecStart=/home/hamzaosrouti/vcable.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=default.target
